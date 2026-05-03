@@ -214,16 +214,12 @@ newgrp docker
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 👨‍💻 Author
 
 **Ranbeer Reddy**
-- LinkedIn: [Your LinkedIn Profile]
-- Email: [your.email@example.com]
-- GitHub: [your-github-username]
+- LinkedIn: https://www.linkedin.com/in/ranbeerreddy-mukpogle-528b48290/
+- Email: reddyranbeer@gmail.com
+- GitHub: https://github.com/RanbeerReddy
 
 ## 🙏 Acknowledgments
 
