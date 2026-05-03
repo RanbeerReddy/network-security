@@ -17,6 +17,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_DB_URL=os.getenv("MONGO_DB_URL")
+if MONGO_DB_URL is None:
+    raise NetworkSecurityException("MONGO_DB_URL environment variable not set", sys)
 
 
 class DataIngestion:
@@ -43,7 +45,7 @@ class DataIngestion:
             df.replace({"na":np.nan},inplace=True)
             return df
         except Exception as e:
-            raise NetworkSecurityException
+            raise NetworkSecurityException(e, sys)
         
     def export_data_into_feature_store(self,dataframe: pd.DataFrame):
         try:

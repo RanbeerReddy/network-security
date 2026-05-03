@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 MONGO_DB_URL=os.getenv("MONGO_DB_URL")
-print(MONGO_DB_URL)
 
 import certifi
 ca=certifi.where()
@@ -16,6 +15,7 @@ import numpy as np
 import pymongo
 from networksecurity.exception.exception import NetworkSecurityException
 from networksecurity.logging.logger import logging
+from networksecurity.constant.training_pipeline import DATA_INGESTION_DATABASE_NAME, DATA_INGESTION_COLLECTION_NAME
 
 class NetworkDataExtract():
     def __init__(self):
@@ -50,8 +50,8 @@ class NetworkDataExtract():
         
 if __name__=='__main__':
     FILE_PATH="Network_Data\phisingData.csv"
-    DATABASE="KRISHAI"
-    Collection="NetworkData"
+    DATABASE=DATA_INGESTION_DATABASE_NAME
+    Collection=DATA_INGESTION_COLLECTION_NAME
     networkobj=NetworkDataExtract()
     records=networkobj.csv_to_json_convertor(file_path=FILE_PATH)
     print(records)
